@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1016"><meta name="description" content="Zshbin: secure file sharing, under construction.">
+<title>Zshbin · GitHub-backed sharing</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1016;color:#e6edf5}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 70% 0%,#17334b 0%,transparent 48%),#0b1016}
+main{max-width:880px;margin:auto;padding:clamp(30px,8vw,92px) 24px}a{color:#9ed3ff}
+header{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.logo{font-size:1.35rem;letter-spacing:-.05em;font-weight:800}.dot{color:#78d8a0}
+.eyebrow{margin-top:clamp(82px,13vw,142px);color:#82b8da;text-transform:uppercase;font-size:.76rem;letter-spacing:.2em;font-weight:700}
+h1{font-size:clamp(2.4rem,7vw,5.3rem);line-height:1.06;letter-spacing:-.065em;margin:19px 0 22px}
+.lead{color:#a9b9c9;font-size:1.13rem;line-height:1.7;max-width:600px}
+.buttons{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 60px}
+.buttons a{padding:13px 20px;border:1px solid #496072;border-radius:10px;text-decoration:none;font-weight:650}
+.buttons a.primary{background:#b3e3fe;color:#0b1722;border-color:transparent}
+.panel{border:1px solid #2a3948;border-radius:16px;background:#111b27;padding:24px}
+.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#d5f0ff;line-height:1.9;font-size:.94rem;overflow:auto}
+.warn{margin-top:16px;color:#e9c58a;font-size:.92rem}
+ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+li{background:#111b27;border:1px solid #293744;border-radius:12px;padding:18px;color:#aec0d1;line-height:1.5}
+li strong{color:#e8f1fb;display:block;margin-bottom:7px}
+footer{border-top:1px solid #263540;color:#8298aa;margin-top:76px;padding:25px 0;font-size:.85rem}
+@media(max-width:640px){ul{grid-template-columns:1fr}.eyebrow{margin-top:75px}}
+</style></head>
+<body><main>
+<header><div class="logo">zshbin<span class="dot">.</span></div><a href="https://github.com/cheeseonamonkey/Zshbin">Source ↗</a></header>
+<div class="eyebrow">Open source · GitHub-backed · Under construction</div>
+<h1>Share files simply.<br>Keep control of the keys.</h1>
+<p class="lead">A standalone pastebin in development, designed for optional public sharing, client-side encryption, expiration, and a small MCP interface.</p>
+<div class="buttons"><a class="primary" href="https://github.com/cheeseonamonkey/Zshbin">View repository ↗</a>
+<a href="https://github.com/cheeseonamonkey/Zshbin/blob/main/docs/IMPLEMENTATION_PLAN.md">Read roadmap</a></div>
+<section class="panel" aria-label="CLI setup">
+<div class="mono">$ uv tool install git+https://github.com/cheeseonamonkey/Zshbin.git<br>$ gh auth login<br>$ zshbin auth<br>$ zshbin notes.txt --public</div>
+<p class="warn">Encryption is not implemented yet. Current uploads are explicit public plaintext only. Do not upload secrets.</p></section>
+<ul><li><strong>CLI first</strong>GitHub identity, shared storage core.</li>
+<li><strong>Encrypted sharing</strong>Per-file keys, authenticated encryption. Planned.</li>
+<li><strong>Minimal MCP</strong>Four planned operations: list, push, pull, delete.</li></ul>
+<footer>Independent project derived from ShipHero/shbin · MIT License · No access tokens or secrets embedded in this site.</footer>
+</main></body></html>

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["flit_core>=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "zshbin"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+readme = "README.md"
+authors = [{name = "ShipHero LLC and contributors"}]
+dependencies = [
+  "PyGithub>=2.0",
+  "pyclip>=0.7.0",
+  "python-magic>=0.4.27",
+  "docopt-ng>=0.8.1",
+  "rich>=13",
+  "platformdirs>=4.3.6",
+]
+dynamic = ["version", "description"]
+
+[project.urls]
+Homepage = "https://github.com/cheeseonamonkey/Zshbin"
+Issues = "https://github.com/cheeseonamonkey/Zshbin/issues"
+
+[project.scripts]
+zshbin = "shbin:main"
+
+[tool.flit.module]
+name = "shbin"
+
+[tool.ruff]
+line-length = 120
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-mock>=3.14", "ruff>=0.8"]
