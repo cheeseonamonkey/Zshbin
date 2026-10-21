@@ -1,6 +1,6 @@
-from unittest.mock import Mock, create_autospec, patch
 import io
 import os
+from unittest.mock import Mock, create_autospec, patch
 
 import pytest
 from docopt import DocoptExit
@@ -8,7 +8,7 @@ from github import GithubException
 from github.Repository import Repository
 from pyclip import ClipboardSetupException as RealClipboardSetupException
 
-from shbin import __version__, __doc__, main
+from shbin import __doc__, __version__, main
 
 PNG_1x1 = (
     b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00\x90wS\xde\x00"
