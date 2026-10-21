@@ -18,7 +18,7 @@ def test_env_token_preferred(monkeypatch):
 
 
 def test_config_omits_all_secrets(monkeypatch, tmp_path):
-    import shbin.auth as auth
+    from shbin import auth
 
     monkeypatch.setattr(auth, "CONFIG_PATH", tmp_path / "config.json")
     save_config({"repo": "owner/data", "token": "never-write", "password": "never-write"})
@@ -28,7 +28,7 @@ def test_config_omits_all_secrets(monkeypatch, tmp_path):
 
 @pytest.mark.parametrize("repo", ["../../../etc", "missing-slash", "owner/../../repo", ""])
 def test_bad_repo_rejected(monkeypatch, tmp_path, repo):
-    import shbin.auth as auth
+    from shbin import auth
 
     monkeypatch.setattr(auth, "CONFIG_PATH", tmp_path / "config.json")
     with pytest.raises(ValueError):
