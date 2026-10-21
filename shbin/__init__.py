@@ -65,8 +65,10 @@ def get_repo_and_user():
     token = get_token()
     repo_name = os.getenv("ZSHBIN_REPO") or os.getenv("SHBIN_REPO") or data.get("repo")
     if not token or not repo_name:
-        print("[red]x[/red] Missing credentials or target repo: run gh auth login and zshbin auth, "
-              "or set ZSHBIN_GITHUB_TOKEN and ZSHBIN_REPO.")
+        print(
+            "[red]x[/red] Missing credentials or target repo: run gh auth login and zshbin auth, "
+            "or set ZSHBIN_GITHUB_TOKEN and ZSHBIN_REPO."
+        )
         raise SystemExit(1)
     gh = Github(token)
     return gh.get_repo(repo_name), gh.get_user().login
