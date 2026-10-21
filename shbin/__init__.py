@@ -14,6 +14,7 @@ import pyclip
 from docopt import DocoptExit, docopt
 from github import Github, GithubException
 from rich import print
+
 from .auth import do_auth, get_token, load_config
 
 
